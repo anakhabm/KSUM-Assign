@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<head>
+    <title>KSUM Project</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="header">
+    <div id="cover">
+        <div class="logo">
+            <img src="friends-logo-png.png">
+        </div>
+        <div class="searchbox">
+            <form actions="search.php" method="GET" id="search">
+                <input type="text" name="a" size="60" placeholder="Search..."/>
+
+            </form>
+        </div>
+        <div id="menu">
+            <a href="#">Home</a>
+            <a href="#">Friends</a>
+            <a href="#">Groups</a>
+            <a href="#">Events</a>
+            
+
+        </div>
+    </div>
+</div>
+<div id="myData">
+</div>
+
+
+<script>
+        fetch('sample.json')
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                appendData(data);
+            })
+            .catch(function (err) {
+                console.log('error: ' + err);
+            });
+        
+    </script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
